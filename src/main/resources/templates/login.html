@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            font-family: 'Arial', sans-serif;
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1556757921-2080f1f3a2b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJvb2slMjBsaWZ8ZW58MHx8fHwxNjYyMTU0MzE1&ixlib=rb-1.2.1&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .input {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+        }
+        .input:focus {
+            border-color: #00d1b2;
+            box-shadow: 0 0 0 1px rgba(0, 209, 178, 0.5);
+        }
+        .button.is-link {
+            background-color: #00d1b2;
+            border: none;
+        }
+        .button.is-link:hover {
+            background-color: #00b59a;
+        }
+        .notification {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        .field p {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title has-text-weight-bold">Login</h1>
+            <form th:action="@{/login}" method="post">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" name="username" required placeholder="Digite seu username">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" name="password" required placeholder="Digite sua senha">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link is-fullwidth">Login</button>
+                    </div>
+                </div>
+                <div th:if="${param.error}" class="notification is-danger">
+                    Invalid username or password.
+                </div>
+                <div th:if="${param.logout}" class="notification is-info">
+                    You have been logged out.
+                </div>
+            </form>
+            <a href="/oauth2/authorization/google" class="button is-medium m-4 is-link">
+                <span class="icon">
+                    <i class="fab fa-google"></i>
+                </span>
+                <span>Login with Google</span>
+            </a>
+            <div class="field">
+                <p>Don't Have an account?</p>
+                <a href="/register" class="button is-info">Create account</a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
