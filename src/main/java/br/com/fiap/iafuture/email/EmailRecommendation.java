@@ -12,4 +12,8 @@ public class EmailRecommendation {
         this.email = email;
         this.recommendation = recommendation;
     }
+
+    public EmailRecommendation() {
+
+    }
 }

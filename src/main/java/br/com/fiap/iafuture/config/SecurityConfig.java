@@ -28,7 +28,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register", "/error", "/oauth2/**", "/reviews/new", "/reviews", "/email/send-test").permitAll()
+                        .requestMatchers("/login", "/register", "/error", "/oauth2/**", "/reviews/new", "/reviews", "/email/send-test", "/email/send-recommendation").permitAll()
                         .anyRequest().authenticated())
                 .oauth2Login(login -> login
                         .loginPage("/login")
