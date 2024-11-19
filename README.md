@@ -26,7 +26,7 @@ API do projeto IaFuture - Software que auxilia empresas/lojas de livros a captar
 - O administrador da API poderá enviar emails para usuários, recomendando livros baseados em seus gostos
 - Tanto através das reviews dos usuários, como da inteligência artificial, é possivel que a loja/empresa conheça melhor seus clientes e com base nisso, poder recomendar livros que mais possuem chance do cliente adquirir
 
--> Link do video explicando: https://www.youtube.com/watch?v=JvOuBa6uBJM
+-> Link do video explicando: https://youtu.be/JvOuBa6uBJM?si=LJ_kkbeuHgsjKoHL
 
 # Recursos da aplicação
 
